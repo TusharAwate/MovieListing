@@ -9,7 +9,7 @@ Local development
 
 It's an example web app built in React/Redux and Redux-Saga that handles side effects with API requests to TMDb (themoviedb.org).
 
-![Movie listing screenshot](screenshot.jpg?raw=true "Movie listing in action")
+![Movie listing screenshot](screenshot.png?raw=true "Movie listing in action")
 
 ## Folder Structure
 
