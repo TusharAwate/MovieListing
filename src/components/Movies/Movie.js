@@ -22,11 +22,11 @@ class Movie extends PureComponent {
 
         return (
             <li className="Movie">
-                { base_url && <picture>
+                {base_url && <picture>
                     <source srcSet={base_url + '/w92/' + movie.poster_path} media="(max-width: 500px)" />
                     <source srcSet={base_url + '/w185/' + movie.poster_path} />
                     <img className="Movie__Poster__Image" src={base_url + '/w185/' + movie.poster_path} alt={'Poster of ' + movie.title + ' movie'} />
-                </picture> }
+                </picture>}
                 <h2 className="Movie__Title">{movie.title}</h2>
                 <h5 className="Movie__Genere">Genre: {genre_names}</h5>
             </li>

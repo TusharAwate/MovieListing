@@ -22,11 +22,11 @@ class MovieGenreFilter extends PureComponent {
 
         return (
             <div className="MovieGenreFilter">
-                { genres && genres.map((genre, i) => (
+                {genres && genres.map((genre, i) => (
                     <label key={i} className="MovieGenreFilter__Genre__Label">
                         {genre.name}
                         <input name={genre.id} className="MovieGenreFilter__Genre__Input" type="checkbox" checked={filterGenres.find(id => id === genre.id)} onChange={(event) => this.handleChange(event, genre.id)} />
-                    </label>)) }
+                    </label>))}
             </div>
         )
     }

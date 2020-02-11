@@ -24,7 +24,7 @@ export default function (state = initialState, action) {
             if (action.checked) {
                 // adding a genre to the filter and avoid duplicates
                 if (!state.filterGenres.find(id => id === action.genreId)) {
-                    const filterGenres = [ ...state.filterGenres, action.genreId ]
+                    const filterGenres = [...state.filterGenres, action.genreId]
 
                     return { ...state, filterGenres }
                 } else {

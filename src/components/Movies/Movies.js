@@ -5,21 +5,21 @@ import Movie from './Movie'
 import MovieGenreFilter from './MovieGenreFilter'
 import MovieRatingFilter from './MovieRatingFilter'
 
-const updateMovieGenreWithNames = (movies, genres) =>{
-    (movies).map(function(n) {
-      let genreArray = [];
-      for(let genreID of n.genre_ids){
-        for(let genre of genres){
-          if(genreID == genre.id){
-            genreArray.push(genre.name)
-            n.genre_names = genreArray;
-          }
+const updateMovieGenreWithNames = (movies, genres) => {
+    (movies).map(function (n) {
+        let genreArray = [];
+        for (let genreID of n.genre_ids) {
+            for (let genre of genres) {
+                if (genreID == genre.id) {
+                    genreArray.push(genre.name)
+                    n.genre_names = genreArray;
+                }
+            }
         }
-      }
     })
 
     return movies;
-  }
+}
 
 class Movies extends PureComponent {
     componentDidMount() {
@@ -37,7 +37,7 @@ class Movies extends PureComponent {
 
         allMovies && genres && updateMovieGenreWithNames(allMovies, genres);
 
-       
+
 
         // filter movies by rating and genres:
         // - for each movie:
@@ -47,7 +47,7 @@ class Movies extends PureComponent {
             // - make sure that the current movie has each filter genre (note the && opeartor line below) set in its genre_ids
             const genreCheck = filterGenres.map(id => id).reduce((acc, cur) => acc && movie.genre_ids.find(id => cur === id), true)
 
-            console.log('movie.genre_names ==>> ',movie.genre_names);
+            console.log('movie.genre_names ==>> ', movie.genre_names);
 
             // make sure its above the minimum rating as well
             return movie.vote_average > filterMinRating && genreCheck
@@ -60,10 +60,10 @@ class Movies extends PureComponent {
             <div className="Movies__Filters">
                 <MovieRatingFilter />
                 <MovieGenreFilter />
-                { movies && <h3>Total movies: { movies.length }</h3> }
+                {movies && <h3>Total movies: {movies.length}</h3>}
             </div>,
             <ul className="Movies">
-                { movies && movies.map((movie, i) => <Movie movie={movie} genres={movie.genre_names} config={config} key={i} />) }
+                {movies && movies.map((movie, i) => <Movie movie={movie} genres={movie.genre_names} config={config} key={i} />)}
             </ul>
         ]
     }

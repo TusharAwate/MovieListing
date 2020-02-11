@@ -34,14 +34,14 @@ function* fetchApiSaga() {
         let movies = [],
             page = 1,
             response
-        
+
         // API response for movies is paginated, use a loop to fetch all movies
         do {
             // fetch another page
             response = yield call(fetchMovies, page)
             // combine the results
-            movies = [ ...movies, ...response.data.results ]
-            page++ 
+            movies = [...movies, ...response.data.results]
+            page++
         } while (page <= response.data.total_pages)
 
         // sort movies by popularity (a float number between 0-...)
