@@ -4,6 +4,7 @@ Local development
 - Install the project dependencies: `npm i`
 - Local development: `npm run start`
 - Unit test: `npm run test`
+- Coverage: `npm test -- --coverage`
 - Build : `npm run build`
 
 
