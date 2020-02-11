@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movie should render and match the snapshot 1`] = `
+<li
+  class="Movie"
+>
+  <picture>
+    <source
+      srcset="test_secure_base_url/w92/test_poster_path"
+      media="(max-width: 500px)"
+    />
+    <source
+      srcset="test_secure_base_url/w185/test_poster_path"
+    />
+    <img
+      class="Movie__Poster__Image"
+      src="test_secure_base_url/w185/test_poster_path"
+      alt="Poster of test_title movie"
+    />
+  </picture>
+  <h2
+    class="Movie__Title"
+  >
+    test_title
+  </h2>
+  <h5
+    class="Movie__Genere"
+  >
+    Genre: 
+    genre1, genre2
+  </h5>
+</li>
+`;
